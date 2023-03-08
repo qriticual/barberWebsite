@@ -11,14 +11,13 @@ body {
   margin: 0 auto;
   padding: 0 15px;
   display: flex;
-  justify-content: flex-start;
   align-items: center;
   height: 100%;
+  display: flex;
 }
 
 .navbar-text {
     display: inline-block;
-    flex-grow: 1;
     font-size: 18px;
     line-height: normal;
     min-width: 22px;
@@ -36,8 +35,6 @@ body {
   z-index: 999;
   height: 60px;
   background-color: #fef7e5;
-  display: flex;
-  justify-content: center;
 }
 
 .logo {
@@ -48,11 +45,12 @@ body {
 }
 
 .nav-elements {
+  width: 70vw;
 }
 
 .nav-elements ul {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   list-style-type: none;
 }
 
@@ -66,6 +64,12 @@ body {
   color: #2f234f;
   text-decoration: none;
 }
+
+.nav-elements ul a:hover {
+  cursor: pointer;
+  opacity: 0.7;
+}
+
 
 .nav-elements ul a.active {
   color: #574c4c;
@@ -84,18 +88,22 @@ body {
 }
 
 
-@media (max-width: 768px) {
+@media (max-width: 840px) {
   .nav-elements ul li:not(:last-child) {
     margin-right: 30px;
   }
+
+  .nav-elements {
+    width: 55vw;
+  }
+
 }
 
 @media (max-width: 600px) {
 
-
-    .navbar {
-        display: block;
-    }   
+  .navbar {
+      display: block;
+  }   
 
   .menu-icon {
     display: block;
