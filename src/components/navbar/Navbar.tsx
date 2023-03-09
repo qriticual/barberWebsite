@@ -67,7 +67,7 @@ const Navbar = ({ showNavbar, setShowNavbar, isOpen, setOpen }: NavbarProps) => 
           <Link onClick={handleShowNavbar}  to="blog-section" smooth={true} duration={500}>Galleri</Link>
         </li>
         <li>
-          <Link onClick={handleShowNavbar}  to="projects-section" smooth={true} duration={500}>Kontakt</Link>
+          <Link onClick={handleShowNavbar}  to="info-section" smooth={true} duration={500}>Kontakt</Link>
         </li>
       </ul>
     </div>
