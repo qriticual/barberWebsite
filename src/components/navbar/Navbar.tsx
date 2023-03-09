@@ -8,6 +8,7 @@ import './Navbar.css'
 const Navbar = () => {
   const [showNavbar, setShowNavbar] = useState(false)
   const [isOpen, setOpen] = useState(false)
+  const [touchStartX, setTouchStartX] = useState<number | null>(null)
   const navbarRef = useRef<HTMLDivElement>(null)
 
   const handleShowNavbar = () => {
@@ -22,10 +23,38 @@ const Navbar = () => {
     }
   }
 
+  const handleTouchStart = (event: TouchEvent) => {
+    setTouchStartX(event.touches[0].clientX)
+  }
+
+  const handleTouchMove = (event: TouchEvent) => {
+    if (touchStartX !== null) {
+      const touchEndX = event.touches[0].clientX
+      const touchDistance = touchEndX - touchStartX
+      if (touchDistance > 50) {
+        setShowNavbar(true)
+        setOpen(true)
+      } else if (touchDistance < -50) {
+        setShowNavbar(false)
+        setOpen(false)
+      }
+    }
+  }
+
+  const handleTouchEnd = () => {
+    setTouchStartX(null)
+  }
+
   useEffect(() => {
     document.addEventListener("mousedown", handleClickOutside)
+    document.addEventListener("touchstart", handleTouchStart)
+    document.addEventListener("touchmove", handleTouchMove)
+    document.addEventListener("touchend", handleTouchEnd)
     return () => {
       document.removeEventListener("mousedown", handleClickOutside)
+      document.removeEventListener("touchstart", handleTouchStart)
+      document.removeEventListener("touchmove", handleTouchMove)
+      document.removeEventListener("touchend", handleTouchEnd)
     }
   }, [])
 
