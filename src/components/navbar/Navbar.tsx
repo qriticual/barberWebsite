@@ -56,19 +56,13 @@ const Navbar = () => {
     <div className={`nav-elements  ${showNavbar && 'active'}`}>
       <ul>
         <li>
-          <Link onClick={handleShowNavbar} to="home-section" smooth={true} duration={500}>Home</Link>
+          <Link onClick={handleShowNavbar} to="home-section" smooth={true} duration={500}>Omdömen</Link>
         </li>
         <li>
-          <Link onClick={handleShowNavbar}  to="blog-section" smooth={true} duration={500}>Blog</Link>
+          <Link onClick={handleShowNavbar}  to="blog-section" smooth={true} duration={500}>Galleri</Link>
         </li>
         <li>
-          <Link onClick={handleShowNavbar}  to="projects-section" smooth={true} duration={500}>Projects</Link>
-        </li>
-        <li>
-          <Link onClick={handleShowNavbar}  to="about-section" smooth={true} duration={500}>About</Link>
-        </li>
-        <li>
-          <Link onClick={handleShowNavbar}  to="contact-section" smooth={true} duration={500}>Contact</Link>
+          <Link onClick={handleShowNavbar}  to="projects-section" smooth={true} duration={500}>Kontakt</Link>
         </li>
       </ul>
     </div>

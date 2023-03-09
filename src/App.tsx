@@ -8,19 +8,7 @@ const App = () => {
   return (
     <>
     <Navbar />
-      <section id="home-section">
-        <Home />
-      </section>
-      <section id="about-section">
-        <Home />
-      </section>
-      <section id="about-section">
-        <Home />
-      </section>
-      <section id="about-section">
-        <Home />
-      </section>
-      <section id="about-section">
+      <section style={{marginTop: "60px"}} id="top-section">
         <Home />
       </section>
       <BottomMenu/>

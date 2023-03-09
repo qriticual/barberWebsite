@@ -1,0 +1,30 @@
+.bottom-menu {
+    display: none;
+}
+
+@media (max-width: 640px) {
+
+    .bottom-menu {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        background-color: #fff;
+        color: #fff;
+        z-index: 20;
+        box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.5);
+        display: flex;
+        justify-content: space-evenly;
+    }
+
+    .bottom-menu-icon {
+        color: #574c4c;
+        margin: 15px;
+        margin-left:0px;
+        text-decoration: none;
+      }
+      
+    .bottom-menu-icon:hover {
+    opacity: 0.7;
+    }
+}
