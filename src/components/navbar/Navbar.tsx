@@ -1,14 +1,18 @@
-import { useState, useEffect, useRef } from 'react'
+import { useState, useEffect, useRef, SetStateAction, Dispatch } from 'react'
 import { FaDirections } from 'react-icons/fa';
 import { RiPhoneFill } from 'react-icons/ri'
 import { Link } from 'react-scroll'
 import { Turn as Hamburger } from 'hamburger-react'
 import './Navbar.css'
 
-const Navbar = () => {
-  const [showNavbar, setShowNavbar] = useState(false)
-  const [isOpen, setOpen] = useState(false)
-  const [touchStartX, setTouchStartX] = useState<number | null>(null)
+interface NavbarProps {
+  showNavbar: boolean;
+  setShowNavbar: Dispatch<SetStateAction<boolean>>;
+  isOpen: boolean;
+  setOpen: Dispatch<SetStateAction<boolean>>;
+}
+
+const Navbar = ({ showNavbar, setShowNavbar, isOpen, setOpen }: NavbarProps) => {
   const navbarRef = useRef<HTMLDivElement>(null)
 
   const handleShowNavbar = () => {
@@ -23,38 +27,10 @@ const Navbar = () => {
     }
   }
 
-  const handleTouchStart = (event: TouchEvent) => {
-    setTouchStartX(event.touches[0].clientX)
-  }
-
-  const handleTouchMove = (event: TouchEvent) => {
-    if (touchStartX !== null) {
-      const touchEndX = event.touches[0].clientX
-      const touchDistance = touchEndX - touchStartX
-      if (touchDistance > 50) {
-        setShowNavbar(true)
-        setOpen(true)
-      } else if (touchDistance < -50) {
-        setShowNavbar(false)
-        setOpen(false)
-      }
-    }
-  }
-
-  const handleTouchEnd = () => {
-    setTouchStartX(null)
-  }
-
   useEffect(() => {
     document.addEventListener("mousedown", handleClickOutside)
-    document.addEventListener("touchstart", handleTouchStart)
-    document.addEventListener("touchmove", handleTouchMove)
-    document.addEventListener("touchend", handleTouchEnd)
     return () => {
       document.removeEventListener("mousedown", handleClickOutside)
-      document.removeEventListener("touchstart", handleTouchStart)
-      document.removeEventListener("touchmove", handleTouchMove)
-      document.removeEventListener("touchend", handleTouchEnd)
     }
   }, [])
 
