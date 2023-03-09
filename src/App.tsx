@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Navbar from './components/navbar/Navbar';
 import Home from './components/Home/Home';
+import Info from './components/Info/Info';
 import BottomMenu from './components/bottomMenu/BottomMenu';
 
 const App = () => {
@@ -36,6 +37,9 @@ const App = () => {
       <Navbar showNavbar={showNavbar} setShowNavbar={setShowNavbar} isOpen={isOpen} setOpen={setOpen} />
       <section style={{ marginTop: '60px' }} id='top-section'>
         <Home />
+      </section>
+      <section style={{ marginTop: '60px' }} id='info-section'>
+        <Info />
       </section>
       <BottomMenu />
     </div>

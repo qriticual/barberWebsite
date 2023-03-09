@@ -57,7 +57,7 @@ const Home = () => {
         Frisör
       </span>
       <a href="tel:08-711 92 08" className='book-button'>
-        Boka  08-711 92 08
+        Ring  08-711 92 08
       </a>
       <p className='opening-text'>{status}</p>
       <img src={require('../../assets/images/salongbild.jpg')} className="home-image"/>

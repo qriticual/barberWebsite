@@ -51,7 +51,7 @@ const Navbar = ({ showNavbar, setShowNavbar, isOpen, setOpen }: NavbarProps) => 
               <RiPhoneFill style={{marginRight: "7px"}} />
               Ring nu
             </a>
-            <a className="navbar-icon" href="https://www.google.com/maps/search/?api=1&query=Kvarnängsvägen 5, 141 49 Huddinge"> 
+            <a className="navbar-icon" href="https://www.google.com/maps/search/?api=1&query=Vissätra Salong Andraus, Kvarnängsvägen, Huddinge"> 
               <FaDirections style={{marginRight: "7px"}} />
               Visa vägen
             </a>
