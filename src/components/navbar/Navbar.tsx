@@ -42,7 +42,11 @@ const Navbar = ({ showNavbar, setShowNavbar, isOpen, setOpen }: NavbarProps) => 
             <div className="menu-icon" onClick={handleShowNavbar}>
               <Hamburger size={20} direction="right" toggled={isOpen} toggle={setOpen}/>
             </div>
-            <div className="navbar-text" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
+            <div className="navbar-text" onClick={() => {
+                window.scrollTo({ top: 0, behavior: 'smooth' })
+                setShowNavbar(false)
+                setOpen(false)
+              }}>
               Andreaus Barbershop
             </div>
           </div>
@@ -51,7 +55,7 @@ const Navbar = ({ showNavbar, setShowNavbar, isOpen, setOpen }: NavbarProps) => 
               <RiPhoneFill style={{marginRight: "7px"}} />
               Ring nu
             </a>
-            <a className="navbar-icon" href="https://www.google.com/maps/search/?api=1&query=Vissätra Salong Andraus, Kvarnängsvägen, Huddinge"> 
+            <a className="navbar-icon" href="https://www.google.com/maps/search/?api=1&query=Vissätra Salong Andraus, Kvarnängsvägen, Huddinge" target="_blank"> 
               <FaDirections style={{marginRight: "7px"}} />
               Visa vägen
             </a>
@@ -60,9 +64,6 @@ const Navbar = ({ showNavbar, setShowNavbar, isOpen, setOpen }: NavbarProps) => 
       </nav>
     <div className={`nav-elements  ${showNavbar && 'active'}`}>
       <ul>
-        <li>
-          <Link onClick={handleShowNavbar} to="home-section" smooth={true} duration={500}>OMDÖMEN</Link>
-        </li>
         <li>
           <Link onClick={handleShowNavbar}  to="gallery-section" smooth={true} duration={500}>GALLERI</Link>
         </li>

@@ -10,7 +10,7 @@ const BottomMenu = () => {
             <RiPhoneFill style={{marginRight: "7px"}} />
             Ring nu
         </a>
-        <a className="bottom-menu-icon" href="https://www.google.com/maps/search/?api=1&query=Vissätra Salong Andraus, Kvarnängsvägen, Huddinge"> 
+        <a className="bottom-menu-icon" href="https://www.google.com/maps/search/?api=1&query=Vissätra Salong Andraus, Kvarnängsvägen, Huddinge" target="_blank"> 
             <FaDirections style={{marginRight: "7px"}} />
             Visa vägen
         </a>

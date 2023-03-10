@@ -22,12 +22,22 @@ const Info = () => {
               Ring nu
             </a>
             <p>08-711 92 08</p>
+            <div className="socials-logo-container">
+              <img 
+                onClick={() => window.open('https://www.facebook.com/Andrausss', '_blank')}
+                src={require("../../assets/icons/fb_logo_black.png")} className="socials-logo"
+                />
+              <img 
+                src={require("../../assets/icons/ig_logo_black.png")} className="socials-logo"
+                onClick={() => window.open('https://www.instagram.com/andraus_barbare/', '_blank')}
+                />
+            </div>
           </div>
         </div>
         <div className="info-details">
           <div className="info-details-header">Adress</div>
           <div className="info-details-content">
-            <a href="https://www.google.com/maps/search/?api=1&query=Vissätra Salong Andraus, Kvarnängsvägen, Huddinge" className='info-button'>
+            <a href="https://www.google.com/maps/search/?api=1&query=Vissätra Salong Andraus, Kvarnängsvägen, Huddinge" target="_blank" className='info-button'>
               Visa vägbeskrivning
             </a>
             <p>Kvarnängsvägen 5, 141 49 Huddinge</p>

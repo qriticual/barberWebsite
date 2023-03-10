@@ -67,21 +67,28 @@
 
 @media (max-width: 760px) {
     .gallery-images-container {
-        display: flex;
-        flex-direction: column;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 20px;
     }
 
     .gallery-image {
-        width: 90vw;
-        height: 60vh;
+        width: 33vw;
+        height: 30vh;
     }
 
 }
 
 @media (max-width: 500px) {
+
+    .gallery-images-container {
+        display: flex;
+        flex-direction: column;
+    }
     
     .gallery-image {
         width: 90vw;
         height: 40vh;
     }
+
 }

@@ -18,25 +18,25 @@ const images: Image[] = [
 
 const Gallery = () => {
   const [selectedImage, setSelectedImage] = useState<number | null>(null);
-  const [startX, setStartX] = useState(0);
-  const [endX, setEndX] = useState(0);
+//   const [startX, setStartX] = useState(0);
+//   const [endX, setEndX] = useState(0);
 
-  const handleSwipeStart = (e: React.TouchEvent<HTMLDivElement>) => {
-    setStartX(e.changedTouches[0].clientX);
-  };
+//   const handleSwipeStart = (e: React.TouchEvent<HTMLDivElement>) => {
+//     setStartX(e.changedTouches[0].clientX);
+//   };
 
-  const handleSwipeEnd = (e: React.TouchEvent<HTMLDivElement>) => {
-    setEndX(e.changedTouches[0].clientX);
-    handleSwipe();
-  };
+//   const handleSwipeEnd = (e: React.TouchEvent<HTMLDivElement>) => {
+//     setEndX(e.changedTouches[0].clientX);
+//     handleSwipe();
+//   };
 
-  const handleSwipe = () => {
-    if (selectedImage && endX - startX > 100) {
-      handlePrevious();
-    } else if (selectedImage && startX - endX > 100) {
-      handleNext();
-    }
-  };
+//   const handleSwipe = () => {
+//     if (selectedImage && endX - startX > 100) {
+//       handlePrevious();
+//     } else if (selectedImage && startX - endX > 100) {
+//       handleNext();
+//     }
+//   };
 
   const handleNext = () => {
     if (selectedImage && selectedImage < images.length) {
@@ -83,8 +83,8 @@ const Gallery = () => {
       {selectedImage && (
         <div
           className="selected-image-overlay"
-          onTouchStart={handleSwipeStart}
-          onTouchEnd={handleSwipeEnd}
+        //   onTouchStart={handleSwipeStart}
+        //   onTouchEnd={handleSwipeEnd}
           onClick={handleOutsideClick}
         >
           <img
@@ -93,10 +93,10 @@ const Gallery = () => {
             alt={`Bilde ${selectedImage}`}
           />
           <div className="arrow-container arrow-container-left">
-            <FaArrowLeft onClick={handlePrevious} />
+            <FaArrowLeft style={{"scale": "2"}} onClick={handlePrevious} />
           </div>
           <div className="arrow-container arrow-container-right">
-            <FaArrowRight onClick={handleNext} />
+            <FaArrowRight style={{"scale": "2"}} onClick={handleNext} />
           </div>
         </div>
       )}
