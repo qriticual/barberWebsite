@@ -1,0 +1,32 @@
+.price-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 70%;
+    margin-top: 20px;
+  }
+  
+  .price-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 8px;
+    border-bottom: 1px solid #ccc;
+  }
+  
+  .price-item-name {
+    flex-grow: 1;
+    margin-right: 16px;
+  }
+  
+  .price-item-price {
+    font-weight: bold;
+  }
+  
+  @media (max-width: 760px) {
+    .price-list {
+        width: 90%;
+        
+    }
+  }

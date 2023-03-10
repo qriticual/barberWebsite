@@ -10,13 +10,13 @@ const Home = () => {
   };
 
   const openingHours: OpeningHours = {
-    Sunday: { open: '12:00', close: '20:00' },
-    Monday: { open: '09:00', close: '17:00' },
-    Tuesday: { open: '09:00', close: '17:00' },
-    Wednesday: { open: '09:00', close: '17:00' },
-    Thursday: { open: '09:00', close: '17:00' },
-    Friday: { open: '09:00', close: '20:00' },
-    Saturday: { open: '12:00', close: '20:00' },
+    Sunday: { open: '12:00', close: '12:00' },
+    Monday: { open: '10:00', close: '19:00' },
+    Tuesday: { open: '10:00', close: '19:00' },
+    Wednesday: { open: '10:00', close: '19:00' },
+    Thursday: { open: '10:00', close: '19:00' },
+    Friday: { open: '10:00', close: '18:00' },
+    Saturday: { open: '10:00', close: '17:00' },
   };
 
   const daysOfWeek = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];

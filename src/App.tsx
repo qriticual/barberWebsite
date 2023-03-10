@@ -4,6 +4,7 @@ import Home from './components/Home/Home';
 import Info from './components/Info/Info';
 import BottomMenu from './components/bottomMenu/BottomMenu';
 import Gallery from './components/Gallery/Gallery';
+import PriceList from './components/PriceList/PriceList';
 
 const App = () => {
   const [touchStart, setTouchStart] = useState<number | null>(null);
@@ -41,6 +42,9 @@ const App = () => {
       </section>
       <section style={{ marginTop: '60px' }} id='gallery-section'>
         <Gallery />
+      </section>
+      <section style={{ marginTop: '60px' }} id='price-section'>
+        <PriceList />
       </section>
       <section style={{ marginTop: '60px' }} id='info-section'>
         <Info />

@@ -61,13 +61,16 @@ const Navbar = ({ showNavbar, setShowNavbar, isOpen, setOpen }: NavbarProps) => 
     <div className={`nav-elements  ${showNavbar && 'active'}`}>
       <ul>
         <li>
-          <Link onClick={handleShowNavbar} to="home-section" smooth={true} duration={500}>Omdömen</Link>
+          <Link onClick={handleShowNavbar} to="home-section" smooth={true} duration={500}>OMDÖMEN</Link>
         </li>
         <li>
-          <Link onClick={handleShowNavbar}  to="gallery-section" smooth={true} duration={500}>Galleri</Link>
+          <Link onClick={handleShowNavbar}  to="gallery-section" smooth={true} duration={500}>GALLERI</Link>
         </li>
         <li>
-          <Link onClick={handleShowNavbar}  to="info-section" smooth={true} duration={500}>Kontakt</Link>
+          <Link onClick={handleShowNavbar}  to="price-section" smooth={true} duration={500}>PRISLISTA</Link>
+        </li>
+        <li>
+          <Link onClick={handleShowNavbar}  to="info-section" smooth={true} duration={500}>KONTAKT</Link>
         </li>
       </ul>
     </div>
