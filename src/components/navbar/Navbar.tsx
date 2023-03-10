@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef, SetStateAction, Dispatch } from 'react'
+import { useEffect, useRef, SetStateAction, Dispatch } from 'react'
 import { FaDirections } from 'react-icons/fa';
 import { RiPhoneFill } from 'react-icons/ri'
 import { Link } from 'react-scroll'
@@ -64,7 +64,7 @@ const Navbar = ({ showNavbar, setShowNavbar, isOpen, setOpen }: NavbarProps) => 
           <Link onClick={handleShowNavbar} to="home-section" smooth={true} duration={500}>Omdömen</Link>
         </li>
         <li>
-          <Link onClick={handleShowNavbar}  to="blog-section" smooth={true} duration={500}>Galleri</Link>
+          <Link onClick={handleShowNavbar}  to="gallery-section" smooth={true} duration={500}>Galleri</Link>
         </li>
         <li>
           <Link onClick={handleShowNavbar}  to="info-section" smooth={true} duration={500}>Kontakt</Link>

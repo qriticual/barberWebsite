@@ -35,16 +35,13 @@ const Home = () => {
   let status;
   if (currentTime >= openingTime && currentTime < closingTime) {
     status = 'Öppet till ' + closingTime + " i dag";
+  } else if ( currentTime < openingTime ){
+    status = 'Stängt, öppnar ' + openingTime + " i dag";
   } else if ( currentTime >= closingTime ) {
     status = 'Stängt, öppnar imorgon ' + tomorrowOpeningTime;
-  }
-  else if ( currentTime < openingTime ){
-    status = 'Stängt, öppnar ' + openingTime + " i dag";
-  }
-  else{
+  } else {
     status = ''
   }
-
 
   return (
     <div className="home-container">
