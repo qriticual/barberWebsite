@@ -2,7 +2,7 @@ import React from 'react';
 
 const OpeningHours = () => {
   const days = ['Måndag', 'Tisdag', 'Onsdag', 'Torsdag', 'Fredag', 'Lördag', 'Söndag'];
-  const times = ['1.10:00 - 19:00', '2.10:00 - 19:00', '3.10:00 - 19:00', '4.10:00 - 19:00', '5.10:00 - 18:00', '6.10:00 - 17:00', '7.Stängt'];
+  const times = ['1.10:00 - 19:00', '2.10:00 - 19:00', '3.10:00 - 19:00', '4.10:00 - 19:00', '5.10:00 - 19:00', '6.10:00 - 17:30', '7.Stängt'];
 
   return (
     <div style={{ display: 'flex' }}>

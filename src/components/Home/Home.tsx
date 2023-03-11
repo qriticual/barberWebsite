@@ -15,8 +15,8 @@ const Home = () => {
     Tuesday: { open: '10:00', close: '19:00' },
     Wednesday: { open: '10:00', close: '19:00' },
     Thursday: { open: '10:00', close: '19:00' },
-    Friday: { open: '10:00', close: '18:00' },
-    Saturday: { open: '10:00', close: '17:00' },
+    Friday: { open: '10:00', close: '19:00' },
+    Saturday: { open: '10:00', close: '17:30' },
   };
 
   const daysOfWeek = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
