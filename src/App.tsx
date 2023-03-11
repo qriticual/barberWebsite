@@ -12,7 +12,7 @@ const App = () => {
   const [showNavbar, setShowNavbar] = useState(false);
   const [isOpen, setOpen] = useState(false);
   const [canSwipe, setCanSwipe] = useState(true);
-  const minSwipeDistance = 50;
+  const minSwipeDistance = 70;
 
   const onTouchStart = (e: React.TouchEvent<HTMLDivElement>) => {
     setTouchEnd(null);
@@ -26,6 +26,7 @@ const App = () => {
   const onTouchEnd = () => {
     if (!touchStart || !touchEnd) return;
     const distance = touchStart - touchEnd;
+    console.log(distance)
     const isLeftSwipe = distance > minSwipeDistance;
     const isRightSwipe = distance < -minSwipeDistance;
     if ((isLeftSwipe || isRightSwipe) && canSwipe) {

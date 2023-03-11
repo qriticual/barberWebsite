@@ -10,7 +10,7 @@ const Home = () => {
   };
 
   const openingHours: OpeningHours = {
-    Sunday: { open: '12:00', close: '12:00' },
+    Sunday: { open: 'Stängt', close: 'Stängt' },
     Monday: { open: '10:00', close: '19:00' },
     Tuesday: { open: '10:00', close: '19:00' },
     Wednesday: { open: '10:00', close: '19:00' },
@@ -35,10 +35,15 @@ const Home = () => {
   let status;
   if (currentTime >= openingTime && currentTime < closingTime) {
     status = 'Öppet till ' + closingTime + " i dag";
-  } else if ( currentTime < openingTime ){
+  } 
+  else if ( currentTime < openingTime ){
     status = 'Stängt, öppnar ' + openingTime + " i dag";
   } else if ( currentTime >= closingTime ) {
-    status = 'Stängt, öppnar imorgon ' + tomorrowOpeningTime;
+    if(tomorrowOpeningTime === "Stängt") {
+      status = "Stängt, öppnar måndag 10:00 "
+    } else {
+      status = 'Stängt, öppnar imorgon ' + tomorrowOpeningTime;
+    }
   } else {
     status = ''
   }
