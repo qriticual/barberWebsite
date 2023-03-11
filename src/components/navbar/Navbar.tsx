@@ -47,7 +47,7 @@ const Navbar = ({ showNavbar, setShowNavbar, isOpen, setOpen }: NavbarProps) => 
                 setShowNavbar(false)
                 setOpen(false)
               }}>
-              Andreaus Barbershop
+              Andraus Barbershop
             </div>
           </div>
           <div className="icons-container">

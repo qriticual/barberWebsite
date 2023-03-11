@@ -1,5 +1,5 @@
-import { useState } from "react";
-import { FaArrowLeft, FaArrowRight, FaTimes } from "react-icons/fa";
+import { useState, useEffect } from "react";
+import { FaArrowLeft, FaArrowRight} from "react-icons/fa";
 import "./Gallery.css";
 
 type Image = {
@@ -16,41 +16,53 @@ const images: Image[] = [
   { src: require("../../assets/images/galleryImage6.PNG"), alt: "Bilde 6" },
 ];
 
-const Gallery = () => {
+const Gallery = (props: { changeCanSwipe: Function; }) => {
   const [selectedImage, setSelectedImage] = useState<number | null>(null);
-//   const [startX, setStartX] = useState(0);
-//   const [endX, setEndX] = useState(0);
+  const [startX, setStartX] = useState(0);
+  const [endX, setEndX] = useState(0);
 
-//   const handleSwipeStart = (e: React.TouchEvent<HTMLDivElement>) => {
-//     setStartX(e.changedTouches[0].clientX);
-//   };
+  useEffect(() => {
+    if( selectedImage != null )
+    {
+      props.changeCanSwipe(false)
+    }
+  }, [selectedImage]);
 
-//   const handleSwipeEnd = (e: React.TouchEvent<HTMLDivElement>) => {
-//     setEndX(e.changedTouches[0].clientX);
-//     handleSwipe();
-//   };
+  const handleSwipeStart = (e: React.TouchEvent<HTMLDivElement>) => {
+    setStartX(e.changedTouches[0].clientX);
+  };
 
-//   const handleSwipe = () => {
-//     if (selectedImage && endX - startX > 100) {
-//       handlePrevious();
-//     } else if (selectedImage && startX - endX > 100) {
-//       handleNext();
-//     }
-//   };
+  const handleSwipeEnd = (e: React.TouchEvent<HTMLDivElement>) => {
+    setEndX(e.changedTouches[0].clientX);
+    handleSwipe();
+  };
+
+  const handleSwipe = () => {
+    if (selectedImage && endX - startX > 100) {
+      handlePrevious();
+    } else if (selectedImage && startX - endX > 100) {
+      handleNext();
+    }
+  };
 
   const handleNext = () => {
     if (selectedImage && selectedImage < images.length) {
       setSelectedImage(selectedImage + 1);
+    } else if (selectedImage === 6) {
+      setSelectedImage(1);
     }
   };
 
   const handlePrevious = () => {
     if (selectedImage && selectedImage > 1) {
       setSelectedImage(selectedImage - 1);
+    } else if (selectedImage === 1) {
+      setSelectedImage(6);
     }
   };
 
   const handleExit = () => {
+    props.changeCanSwipe(true)
     setSelectedImage(null);
   };
 
@@ -83,8 +95,8 @@ const Gallery = () => {
       {selectedImage && (
         <div
           className="selected-image-overlay"
-        //   onTouchStart={handleSwipeStart}
-        //   onTouchEnd={handleSwipeEnd}
+          onTouchStart={handleSwipeStart}
+          onTouchEnd={handleSwipeEnd}
           onClick={handleOutsideClick}
         >
           <img
