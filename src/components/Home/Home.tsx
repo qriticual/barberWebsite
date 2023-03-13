@@ -34,14 +34,31 @@ const Home = () => {
 
   let status;
   if (currentTime >= openingTime && currentTime < closingTime) {
-    status = 'Öppet till ' + closingTime + " i dag";
+    if( openingTime === 'Stängt')
+    {
+      status = 'Stängt idag, öppnar ' + tomorrowOpeningTime + ' imorgon'
+    }
+    else 
+    {
+      status = 'Öppet till ' + closingTime + " i dag";
+    }
   } 
   else if ( currentTime < openingTime ){
-    status = 'Stängt, öppnar ' + openingTime + " i dag";
+    if( openingTime === 'Stängt')
+    {
+      status = 'Stängt idag, öppnar ' + tomorrowOpeningTime + ' imorgon'
+    }
+    else
+    {
+      status = 'Stängt, öppnar ' + openingTime + " i dag";
+    }
   } else if ( currentTime >= closingTime ) {
-    if(tomorrowOpeningTime === "Stängt") {
+    if(tomorrowOpeningTime === "Stängt") 
+    {
       status = "Stängt, öppnar måndag 10:00 "
-    } else {
+    } 
+    else 
+    {
       status = 'Stängt, öppnar imorgon ' + tomorrowOpeningTime;
     }
   } else {
