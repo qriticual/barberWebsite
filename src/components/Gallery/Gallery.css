@@ -16,6 +16,7 @@
 .gallery-image {
     width: 22vw;
     height: 40vh;
+    max-height: 400px;
 }
 
 .gallery-image:hover {
